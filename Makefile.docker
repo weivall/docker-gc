@@ -1,4 +1,4 @@
-DOCKER_REPOSITORY ?= spotify/docker-gc
+DOCKER_REPOSITORY ?= weivall/docker-gc
 DOCKER_TAG ?= $(shell cat version.txt)
 
 DOCKER ?= docker
