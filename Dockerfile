@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.2
+FROM gliderlabs/alpine:3.4
 
 ENV DOCKER_VERSION 1.12.2
 
@@ -8,8 +8,8 @@ RUN apk --update add bash curl \
   && curl -sSL -O https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}.tgz \
   && tar zxf docker-${DOCKER_VERSION}.tgz \
   && mkdir -p /usr/local/bin/ \
-  && mv $(find -name 'docker') /usr/local/bin/ \
-  && chmod +x /usr/local/bin/docker \
+  && mv docker/* /usr/local/bin/ \ 
+  && chmod +x /usr/local/bin/* \
   && apk del curl \
   && rm -rf /tmp/* \
   && rm -rf /var/cache/apk/*
